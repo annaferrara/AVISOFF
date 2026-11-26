@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white font-sans text-ink antialiased; font-size: 1.0625rem; line-height: 1.7; }
+  h1, h2, h3, h4 { @apply font-display text-navy; line-height: 1.15; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    @apply outline-none ring-4 ring-navy/30;
+  }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-7 py-3 font-display text-sm font-bold uppercase tracking-wide
+      transition duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-red { @apply btn bg-avis text-white shadow-lift hover:bg-avis-dark; }
+  .btn-navy { @apply btn bg-navy text-white hover:bg-navy-dark; }
+  .btn-white { @apply btn bg-white text-avis shadow-soft hover:bg-blush; }
+  .btn-outline { @apply btn border-2 border-navy bg-transparent text-navy hover:bg-navy hover:text-white; }
+  .card { @apply overflow-hidden rounded-4xl bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift; }
+  .chip { @apply inline-flex items-center rounded-full bg-blush px-3 py-1 text-xs font-bold uppercase tracking-wider text-avis; }
+  .field { @apply w-full rounded-2xl border-2 border-navy/15 bg-white px-4 py-3 text-base text-ink transition focus:border-navy; }
+  .label { @apply mb-1 block text-sm font-bold text-navy; }
+  .section-title { @apply font-display text-3xl font-extrabold sm:text-4xl; }
+}
